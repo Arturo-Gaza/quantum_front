@@ -1,0 +1,9 @@
+{
+	"BASE_URL":"http://localhost:8000/api",
+	"BASE_URL_": "https://localhost:7021/api/",
+	"BASE_URL_Local": "https://220.110.55.75:4080/api/",
+
+	
+	"BASE_URL_2": "https://localhost:7021/api/",
+	"BASE_URL_Local_2": "https://220.110.55.75:4080/api/"
+}
