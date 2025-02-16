@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Box from '@mui/material/Box';
 import axios from "axios"; // Importar axios
-import Footer from '../../components/Footer';
+import Footer from '../../Layouts/Footer';
 import {LOGIN_USER} from '../../Constants/ApiConstants'
+import HeaderLayout from "../../Layouts/HeaderLayouts";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,11 +16,13 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      // Hacer la solicitud POST a la API
-      const response = await axios.post(LOGIN_USER, {
+
+      const data = {
         email,
         password,
-      });
+      }
+      // Hacer la solicitud POST a la API
+      const response = await axios.post(LOGIN_USER,data);
 
       sessionStorage.setItem('token', response.data.token);
       sessionStorage.setItem('idRol', response.data.data.idRol);
@@ -39,36 +43,42 @@ const Login = () => {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "50px auto", textAlign: "center" }}>
+    
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <HeaderLayout />
+    <div style={{ flexGrow: 1 }}>
       <h2>Inicio de Sesión</h2>
-      <form onSubmit={handleLogin}>
-        <div style={{ marginBottom: "15px" }}>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            style={{ width: "100%", padding: "10px" }}
-          />
-        </div>
-        <div style={{ marginBottom: "15px" }}>
-          <label>Contraseña:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            style={{ width: "100%", padding: "10px" }}
-          />
-        </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit" style={{ padding: "10px 20px" }}>
-          Iniciar Sesión
-        </button>
-      </form>
-      <Footer sx={{ mt: 5 }}/>
+      <Box sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <form onSubmit={handleLogin}>
+          <div style={{ marginBottom: '15px' }}>
+            <label>Email:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              style={{ width: '100%', padding: '10px' }}
+            />
+          </div>
+          <div style={{ marginBottom: '15px' }}>
+            <label>Contraseña:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              style={{ width: '100%', padding: '10px' }}
+            />
+          </div>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <button type="submit" style={{ padding: '10px 20px' }}>
+            Iniciar Sesión
+          </button>
+        </form>
+      </Box>
     </div>
+    <Footer sx={{ mt: 5 }} />
+  </div>
   );
 };
 
