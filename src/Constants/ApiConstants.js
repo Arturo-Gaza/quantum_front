@@ -1,1 +1,1 @@
-export const LOGIN_USER = 'http://localhost:8000/api/auth/login';
+export const LOGIN_USER = 'auth/login';
