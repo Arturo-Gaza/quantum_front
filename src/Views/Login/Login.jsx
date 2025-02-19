@@ -94,11 +94,13 @@ const Login = () => {
 
   return (
     <ThemeProvider theme={theme}>
+        {/*Panel Principal */}
         <Grid container component="main" sx={{ height: '100vh', border: 2 }}>
         <HeaderLayout sx={{ mt: 5 }} />
-        <Grid container component={Paper} elevation={6} square sx={{ border: 2 }}>
-
-        <Grid item xs={12} sm={6} md={6} sx={{ border: 2 }}>
+        {/*Panel central */}
+        <Grid container component={Paper} elevation={6} square sx={{ border: 2,borderColor: 'green' }}>
+        {/*Panel Izquierdo */}
+        <Grid item xs={12} sm={6} md={6} sx={{ border: 2, borderColor: 'red' }}>
               <Box
                 sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
               >
@@ -111,8 +113,8 @@ const Login = () => {
                 
               </Box>
             </Grid>
-            
-            <Grid item xs={12} sm={6} md={6} style={{ paddingTop: '5%' }} sx={{ border: 2 }}>
+            {/*Panel Derecho */}
+            <Grid item xs={12} sm={6} md={6} style={{ paddingTop: '5%' }} sx={{ border: 2, borderColor: 'blue' }}>
             <Box
                 sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
               >
@@ -157,7 +159,8 @@ const Login = () => {
                 
               </Box>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} sx={{ border: 2 }} >
+            {/*Panel footer */}
+            <Grid item xs={12} sm={12} md={12} sx={{ border: 2, borderColor:'yellow' }} >
               <Box
                 sx={{ my: 3, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
               >
