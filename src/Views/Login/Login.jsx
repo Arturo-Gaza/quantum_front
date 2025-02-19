@@ -8,9 +8,27 @@ import { getBaseUrl } from "../../components/AxiosCalls/AxiosCallsLocal";
 import requests from "../../components/AxiosCalls/AxiosCallsLocal";
 import axios from "axios"; // Importar axios
 import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles';
+import { styled, ThemeProvider, createTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import '../../Styles/EstilosGenerales.css'
+import '../../Styles/EstilosGenerales.css';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Avatar from '@mui/material/Avatar';
+import { Typography } from "@mui/material";
+
+// Define el tema fuera del componente
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2', // Color primario
+    },
+    secondary: {
+      main: '#dc004e', // Color secundario
+    },
+  },
+  typography: {
+    fontFamily: 'Arial, sans-serif',
+  },
+});
 
 const Login = () => {
   const [user, setEmail] = useState("");
@@ -75,19 +93,36 @@ const Login = () => {
   }));
 
   return (
+    <ThemeProvider theme={theme}>
+        <Grid container component="main" sx={{ height: '100vh', border: 2 }}>
+        <HeaderLayout sx={{ mt: 5 }} />
+        <Grid container component={Paper} elevation={6} square sx={{ border: 2 }}>
 
-    <div style={{ display: 'flex', flexDirection: 'column', maxHeight: '100vh' }}>
-      <HeaderLayout />
-      <div style={{ flexGrow: 1 }}>
-        <h2>Inicio de Sesión</h2>
-        
-          <Grid container spacing={2}
-            sx={{
-              justifyContent: "flex-end",
-              alignItems: "center",
-            }}>
-            <Box>
-              <form onSubmit={handleLogin} className="login">
+        <Grid item xs={12} sm={6} md={6} sx={{ border: 2 }}>
+              <Box
+                sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+              >
+                <h2>{user.NombreInst}</h2>
+              </Box>
+              <Box
+                style={{ paddingTop: '3%' }}
+                sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+              >
+                
+              </Box>
+            </Grid>
+            
+            <Grid item xs={12} sm={6} md={6} style={{ paddingTop: '5%' }} sx={{ border: 2 }}>
+            <Box
+                sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+              >
+                <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+                  <LockOutlinedIcon sx={{ color: '#ffffff' }} />
+                </Avatar>
+                <Typography component="h1" variant="h6">
+                  Iniciar sesión
+                </Typography>
+                <Box component="form" noValidate  sx={{ mt: 1 }}>
                 <div style={{ marginBottom: '15px' }}>
                   <label>Usuario:</label>
                   <input
@@ -109,16 +144,29 @@ const Login = () => {
                   />
                 </div>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
+
+                <Grid className='margin2' sx={{ border: 2 }}>
+                    <center>
+                      
                 <button type="submit" style={{ padding: '10px 20px' }}>
                   Iniciar Sesión
                 </button>
-              </form>
-            </Box>
-
-          </Grid>
-      </div>
-      <Footer sx={{ mt: 5 }} />
-    </div>
+                    </center>
+                  </Grid>
+                </Box>
+                
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} sx={{ border: 2 }} >
+              <Box
+                sx={{ my: 3, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+              >
+                <Footer sx={{ mt: 5 }} />
+              </Box>
+            </Grid>
+        </Grid>
+        </Grid>
+    </ThemeProvider>
   );
 };
 
