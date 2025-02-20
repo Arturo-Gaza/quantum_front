@@ -13,7 +13,8 @@ import Paper from '@mui/material/Paper';
 import '../../Styles/EstilosGenerales.css';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
-import { Typography } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
+import Logo from '../../Images/Quantum-logo.png'
 
 // Define el tema fuera del componente
 const theme = createTheme({
@@ -92,83 +93,105 @@ const Login = () => {
     color: theme.palette.text.secondary,
   }));
 
+  const MyComponent = ({ Logo }) => {
+    return <img width={'100%'} height={'100%'} src={Logo} alt="Logo" />;
+  };
+
   return (
     <ThemeProvider theme={theme}>
-        {/*Panel Principal */}
-        <Grid container component="main" sx={{ height: '100vh', border: 2 }}>
+      {/*Panel Principal */}
+      <Grid container component="main" sx={{ height: '100vh' }}>
         <HeaderLayout sx={{ mt: 5 }} />
         {/*Panel central */}
-        <Grid container component={Paper} elevation={6} square sx={{ border: 2,borderColor: 'green' }}>
-        {/*Panel Izquierdo */}
-        <Grid item xs={12} sm={6} md={6} sx={{ border: 2, borderColor: 'red' }}>
-              <Box
-                sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                <h2>{user.NombreInst}</h2>
-              </Box>
-              <Box
-                style={{ paddingTop: '3%' }}
-                sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                
-              </Box>
-            </Grid>
-            {/*Panel Derecho */}
-            <Grid item xs={12} sm={6} md={6} style={{ paddingTop: '5%' }} sx={{ border: 2, borderColor: 'blue' }}>
+        <Grid container component={Paper} elevation={6} square sx={{}}>
+          {/*Panel Izquierdo */}
+          <Grid item xs={12} sm={6} md={6} sx={{  }}>
             <Box
-                sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
-                  <LockOutlinedIcon sx={{ color: '#ffffff' }} />
-                </Avatar>
-                <Typography component="h1" variant="h6">
-                  Iniciar sesión
-                </Typography>
-                <Box component="form" noValidate  sx={{ mt: 1 }}>
+              sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+            >
+              <MyComponent Logo={Logo} />
+              <h2>{user.NombreInst}</h2>
+            </Box>
+            <Box
+              style={{ paddingTop: '3%' }}
+              sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+            >
+
+            </Box>
+          </Grid>
+          {/*Panel Derecho */}
+          <Grid item xs={12} sm={6} md={6} sx={{  }}>
+            
+            <Box
+              sx={{ my: 8, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', m: 1 }}
+            >
+              <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
+                <LockOutlinedIcon sx={{ color: '#ffffff' }} />
+              </Avatar>
+              <Typography component="h1" variant="h6">
+                Iniciar sesión
+              </Typography>
+              <Box component="form" noValidate onSubmit={handleLogin} sx={{
+                mt: 1,
+                p: 2, // Padding interno
+                width: '400px', // Ancho fijo
+                height: '340px', // Alto automático (se ajusta al contenido)
+                maxWidth: '90%', // No supera el 90% del ancho del contenedor padre
+                margin: '0 auto', // Centra el formulario horizontalmente
+              }}>
                 <div style={{ marginBottom: '15px' }}>
-                  <label>Usuario:</label>
-                  <input
+                  <Grid item xs={2} sm={2} md={2} sx={{ marginLeft: '15%' }}>
+                    <label >Usuario:</label>
+                  </Grid>
+                  <TextField
                     type="text"
                     value={user}
+                    size="small"
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    style={{ width: '75%', padding: '10px' }}
+                    style={{ width: '75%', padding: '2px', marginLeft: '15%' }}
                   />
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <label>Contraseña:</label>
-                  <input
+                  <Grid item xs={2} sm={2} md={2} sx={{ marginLeft: '15%' }}>
+                    <label>Contraseña:</label>
+                  </Grid>
+
+                  <TextField
                     type="password"
                     value={password}
+                    size="small"
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    style={{ width: '75%', padding: '10px' }}
+                    style={{ width: '75%', padding: '2px', marginLeft: '15%' }}
                   />
                 </div>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
 
-                <Grid className='margin2' sx={{ border: 2 }}>
-                    <center>
-                      
-                <button type="submit" style={{ padding: '10px 20px' }}>
-                  Iniciar Sesión
-                </button>
-                    </center>
-                  </Grid>
-                </Box>
-                
+                <Grid className='margin2' sx={{}}>
+                  <center>
+
+                    <button type="submit"
+                      style={{ padding: '10px 20px', height: '50%' }}
+                      onClick={handleLogin} className="btn-aceptar">
+                      Iniciar Sesión
+                    </button>
+                  </center>
+                </Grid>
               </Box>
-            </Grid>
-            {/*Panel footer */}
-            <Grid item xs={12} sm={12} md={12} sx={{ border: 2, borderColor:'yellow' }} >
-              <Box
-                sx={{ my: 3, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-              >
-                <Footer sx={{ mt: 5 }} />
-              </Box>
-            </Grid>
+
+            </Box>
+          </Grid>
+          {/*Panel footer */}
+          <Grid item xs={12} sm={12} md={12} sx={{  }} >
+            <Box
+              sx={{ my: 3, mx: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+            >
+              <Footer sx={{ mt: 5 }} />
+            </Box>
+          </Grid>
         </Grid>
-        </Grid>
+      </Grid>
     </ThemeProvider>
   );
 };

@@ -31,7 +31,7 @@ const Header = () => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Quantum Project
+          Quantum
         </Typography>
         <Box>
           <Menu

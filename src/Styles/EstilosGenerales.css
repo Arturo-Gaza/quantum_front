@@ -7,3 +7,23 @@
     margin: auto;
     background-color: #f9f9f9;
 }
+
+.btn-aceptar {
+    border-radius: 50px !important;
+    width: 45% !important;
+    box-shadow: none !important;
+    font-family: Arial !important;
+    text-transform: none !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    padding: 6px 12px !important;
+    /* border: 1px solid rgba(255, 255, 255, 0.80) !important; */
+    border: 1px solid #004080 !important;
+    background-color: #0363c4 !important;
+}
+
+.btn-aceptar:hover{
+    background-color: #45a049;
+
+}
