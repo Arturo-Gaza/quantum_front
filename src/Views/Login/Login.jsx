@@ -5,7 +5,6 @@ import Footer from '../../Layouts/Footer';
 import { LOGIN_USER } from '../../Constants/ApiConstants'
 import HeaderLayout from "../../Layouts/HeaderLayouts";
 import { getBaseUrl } from "../../components/AxiosCalls/AxiosCallsLocal";
-import requests from "../../components/AxiosCalls/AxiosCallsLocal";
 import axios from "axios"; // Importar axios
 import Grid from '@mui/material/Grid';
 import { styled, ThemeProvider, createTheme } from '@mui/material/styles';
@@ -61,7 +60,7 @@ const Login = () => {
         sessionStorage.setItem('idUsuario', response.data.data.id);
         sessionStorage.setItem('user', response.data.data.user);
         sessionStorage.setItem('nombre', `${response.data.data.name} ${response.data.data.apellidoP || ''} ${response.data.data.apellidoM || ''}`);
-        sessionStorage.setItem('nameRol', response.data.data.nombre);
+        sessionStorage.setItem('nombre_rol', response.data.data.nombre);
 
         localStorage.setItem("auth", true);
         localStorage.setItem("token", response.data.token);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Login from "./Views/Login/Login";
-import Dashboard from "../src/Layouts/Dashboard";
+import Dashboard from "./Views/Dashboard/Dashboard";
 
 const PrivateRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem("auth");
