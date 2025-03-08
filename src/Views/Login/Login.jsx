@@ -98,9 +98,10 @@ const Login = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <HeaderLayout sx={{ mt: 5 }} />
       {/*Panel Principal */}
       <Grid container component="main" sx={{ height: '100vh' }}>
-        <HeaderLayout sx={{ mt: 5 }} />
+        
         {/*Panel central */}
         <Grid container component={Paper} elevation={6} square sx={{}}>
           {/*Panel Izquierdo */}
