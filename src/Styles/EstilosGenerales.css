@@ -27,3 +27,13 @@
     background-color: #45a049;
 
 }
+
+.containerGeneral {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima de la pantalla */
+}
+
+.content {
+    flex: 1; /* Ocupa todo el espacio disponible */
+}

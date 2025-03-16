@@ -15,6 +15,7 @@ import Avatar from '@mui/material/Avatar';
 import { TextField, Typography } from "@mui/material";
 import Logo from '../../Images/Quantum-logo.png'
 
+
 // Define el tema fuera del componente
 const theme = createTheme({
   palette: {
