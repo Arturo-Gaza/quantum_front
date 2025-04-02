@@ -6,6 +6,10 @@ import {
     Checkbox,
     FormControlLabel
 } from "@mui/material";
+import { TextFieldGeneral } from "../../src/Styles/TextField/TextField";
+import '../Styles/EstilosGenerales.css';
+import Grid from "@mui/material/Grid";
+import { Padding } from '@mui/icons-material';
 
 const CatalogForm = ({ fields, onClose, onSubmit, initialData }) => {
     const [formData, setFormData] = useState(initialData || {});
@@ -47,7 +51,7 @@ const CatalogForm = ({ fields, onClose, onSubmit, initialData }) => {
             sx={{
                 backgroundColor: "#f9f9f9",
                 '& > *': {
-                    marginBottom: 5, // Espaciado uniforme entre elementos
+                    marginBottom: 1, // Espaciado uniforme entre elementos
                 },
                 '& > *:last-child': {
                     marginBottom: 0, // Elimina el margen del último elemento
@@ -60,10 +64,17 @@ const CatalogForm = ({ fields, onClose, onSubmit, initialData }) => {
                     <div key={field.name}>
                         <label>{field.label}</label>
                         {field.type === 'textarea' ? (
-                            <textarea
+                            <TextFieldGeneral
+                                className="inputTextSize100"
+                                type={field.type}
+                                label={field.label}
                                 name={field.name}
-                                value={formData[field.name] || ''}
+                                value={formData[field.name] || ""}
                                 onChange={handleChange}
+                                fullWidth
+                                variant="outlined"
+                                multiline
+                                rows={3}
                             />
                         ) : field.type === 'checkbox' ? (
                             <input
@@ -72,18 +83,46 @@ const CatalogForm = ({ fields, onClose, onSubmit, initialData }) => {
                                 checked={!!formData[field.name]} // Siempre booleano
                                 onChange={handleChange}
                             />
-                        ) : (
-                            <input
+                        ) : field.type === 'text' ? (
+                            <TextFieldGeneral
+                                className="inputTextSize100"
                                 type={field.type}
+                                label={field.label}
                                 name={field.name}
-                                value={formData[field.name] || ''}
+                                value={formData[field.name] || ""}
                                 onChange={handleChange}
+                                fullWidth
+                                variant="outlined"
                             />
-                        )}
+                        ) : null}
                     </div>
                 ))}
-            <button type="submit">Guardar</button>
-            <button type="button" onClick={onClose}>Cancelar</button>
+            <Grid
+                container
+                spacing={2}
+                sx={{ justifyContent: "flex-end", Padding: "2%" }}>
+                <Grid item xs={6}>
+                    <Button
+                        className="btn-aceptar"
+                        type="submit"
+                        variant="contained"
+                        fullWidth
+                    >
+                        Guardar
+                    </Button>
+                </Grid>
+                <Grid item xs={6}>
+                <Button
+                        className="btn-cancelar"
+                        type="submit"
+                        variant="contained"
+                        onClick ={onClose}
+                        fullWidth
+                    >
+                        Cancelar
+                    </Button>
+                </Grid>
+            </Grid>
         </Box>
     );
 };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ROLES_GETALL, ROLES_CREATE } from '../../Constants/ApiConstants';
+import { ROLES_GETALL, ROLES_CREATE, USUARIO_GETALL, CATEGORIAS_GETALL, CATEGORIAS_CREATE } from '../../Constants/ApiConstants';
 
 export const getAllData = async (catalogName) => {
     try {
@@ -10,11 +10,11 @@ export const getAllData = async (catalogName) => {
                 response = await axios.get(ROLES_GETALL);
                 break;
             case "Usuarios":
-                response = await axios.get();
-            // Aquí podrías añadir más casos si es necesario para otros catálogos, por ejemplo:
-            // case "Departamentos":
-            //     response = await axios.get(DEPARTAMENTO_GETALL);
-            //     break;
+                response = await axios.get(USUARIO_GETALL);
+                break;
+            case "Categorias":
+                response = await axios.get(CATEGORIAS_GETALL);
+                break;
 
             default:
                 console.error('Catalogo no soportado');
@@ -35,11 +35,28 @@ export const getAllData = async (catalogName) => {
 };
 
 
-export const createRecord = async (data) => {
+export const createRecord = async (data, catalogName) => {
     try {
-        const response = await axios.post(ROLES_CREATE, data);
-        return response.data;
+        let response;
+            console.log("nombre del catalogo",catalogName);
+        switch (catalogName) {
+            case "Roles":
+                response = await axios.post(ROLES_CREATE, data);
+                break;
+            case "Categorias":
+                response = await axios.post(CATEGORIAS_CREATE, data);
+                break;
+
+            default:
+                console.error('Catálogo no soportado');
+                return null; // Retorna null si no es un caso reconocido
+        }
+
+        return response.data; // Retorna la respuesta del servidor
     } catch (error) {
-        throw error;
+        console.error('Error al crear el registro:', error.response?.data || error.message);
+        return null; // Retorna null en caso de error
     }
 };
+
+

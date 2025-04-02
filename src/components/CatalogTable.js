@@ -15,10 +15,8 @@ import { Padding } from '@mui/icons-material';
 
 const CatalogTable = ({ data, fields, onEdit }) => {
     return (
-        <div style={{ padding: '1%' }}>
-            <Table 
-                sx={{ minWidth: 80, maxHeight: '300px' }}
-                aria-label="customized table">
+        <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+            <Table sx={{ minWidth: 80, width: '99%' }} aria-label="customized table">
                 <TableHead>
                     <TableRow>
                         {fields.filter(field => field.table === true).map((field) => (

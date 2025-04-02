@@ -23,7 +23,7 @@
     background-color: #0363c4 !important;
 }
 
-.btn-aceptar:hover{
+.btn-aceptar:hover {
     background-color: #45a049;
 
 }
@@ -31,9 +31,733 @@
 .containerGeneral {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Altura mínima de la pantalla */
+    min-height: 100vh;
+    /* Altura mínima de la pantalla */
 }
 
 .content {
-    flex: 1; /* Ocupa todo el espacio disponible */
+    flex: 1;
+    /* Ocupa todo el espacio disponible */
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: PALETA DE COLORES :::::::::::::::::::: */
+.color-1 {
+    background-color: #004080 !important;
+}
+
+.color-2 {
+    background-color: #0066CC !important;
+}
+
+.color-3 {
+    background-color: #2AD5AA !important;
+}
+
+.color-4 {
+    background-color: #2AD5AA !important;
+}
+
+.color-5 {
+    background-color: #F37433 !important;
+}
+
+.color-6 {
+    background-color: #212121 !important;
+}
+
+.color-7 {
+    background-color: #6F6F6B !important;
+}
+
+.color-8 {
+    background-color: #FFFFFF !important;
+}
+
+.color-8 {
+    background-color: #19B600 !important;
+}
+
+.color-9 {
+    background-color: #FF0000 !important;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: TEXTLABEL :::::::::::::::::::: */
+.textLabel1 {
+    color: black !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    font-family: Arial !important;
+}
+
+.textLabel2 {
+    color: black !important;
+    font-size: 14px !important;
+    font-family: Arial !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.textLabel3 {
+    color: white !important;
+    font-size: 14px !important;
+    font-family: Arial !important;
+}
+
+.textLabel4 {
+    color: black !important;
+    font-size: 15px !important;
+    font-family: Arial !important;
+}
+
+.textLabel5 {
+    color: red !important;
+    font-size: 15px !important;
+    font-family: Arial !important;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: BOTONES :::::::::::::::::::: */
+.btn-cancelar {
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    font-family: Arial !important;
+    text-transform: none !important;
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 6px 12px !important;
+    /* border: 1px solid rgba(255, 255, 255, 0.80) !important; */
+    border: 1px solid #cf5e2d !important;
+    background-color: #ff0800 !important;
+}
+
+.btn-aceptar {
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    font-family: Arial !important;
+    text-transform: none !important;
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 6px 12px !important;
+    /* border: 1px solid rgba(255, 255, 255, 0.80) !important; */
+    border: 1px solid  #4CAF50 !important;
+    background-color: #5692c4 !important;
+}
+
+.btn-disabled {
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    font-family: Arial !important;
+    text-transform: none !important;
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 6px 12px !important;
+    /* border: 1px solid rgba(255, 255, 255, 0.80) !important; */
+    border: 1px solid #6F6F6B !important;
+    background-color: #6F6F6B !important;
+}
+
+
+
+.btn-aceptarLogin {
+    border-radius: 10px !important;
+    width: 70% !important;
+    box-shadow: none !important;
+    font-family: Arial !important;
+    text-transform: none !important;
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 6px 12px !important;
+    /* border: 1px solid rgba(255, 255, 255, 0.80) !important; */
+    border: 1px solid #012a53 !important;
+    background-color: #004080 !important;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: ICONOS :::::::::::::::::::: */
+.cerrar {
+    position: absolute;
+    margin-top: -2px;
+}
+
+.containerCerrar {
+    justify-content: flex-end !important;
+    margin-top: 0px !important;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: MARGIN :::::::::::::::::::: */
+.marginComponets {
+    margin-top: 10px !important;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: CHECKBOX :::::::::::::::::::: */
+.ckBox1 {
+    background-color: transparent !important;
+    height: 30px;
+    width: 30px;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: INPUTS TEXT Y SELECT :::::::::::::::::::: */
+.inputTextSize100 {
+    background: white;
+    border: 'none';
+    border-radius: 10px !important;
+    width: 100% !important;
+}
+
+.inputTextSize75 {
+    background: white;
+    border: 'none';
+    border-radius: 10px !important;
+    width: 75% !important;
+}
+
+.inputTextSize75disabled {
+    background: rgb(230, 230, 230);
+    border: 'none';
+    width: 75% !important;
+    text-transform: uppercase;
+}
+
+.inputTextSize50 {
+    background: white;
+    border: 'none';
+    border-radius: 10px !important;
+    width: 50% !important;
+}
+
+.inputTextSize25 {
+    background: white;
+    border: 'none';
+    border-radius: 10px !important;
+    width: 25% !important;
+}
+
+/* //:::::::: inputSelect :::::::::::::::::::: */
+.inputSelectSize100 {
+    background: white;
+    border: 'none';
+    /* border-radius: 10px !important; */
+    width: 100% !important;
+}
+
+.inputSelectSize75 {
+    background: white;
+    border: 'none';
+    /* border-radius: 10px !important; */
+    width: 75% !important;
+}
+
+.inputSelectSize50 {
+    background: white;
+    border: 'none';
+    /* border-radius: 10px !important; */
+    width: 50% !important;
+}
+
+.inputSelectSize25 {
+    background: white;
+    border: 'none';
+    /* border-radius: 10px !important; */
+    width: 25% !important;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: BOX :::::::::::::::::::: */
+
+.boxCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: BODY LOGIN Y ROLES :::::::::::::::::::: */
+.bodyPrimario {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #EBEFFF;
+    /* background: url('../../Images/FondoLogin.jpg') no-repeat; */
+    background-size: cover;
+    background-position: center;
+    padding-top: 30px;
+}
+
+.bodyPrimario .titulobodyPrimario {
+    padding-top: 10px;
+    font-size: 22px;
+    text-align: center;
+    color: #0066CC;
+    font-family: Arial;
+}
+
+.wrapper {
+    width: 420px;
+    /* background: #EBEFFF; */
+    background: white;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #6F6F6B;
+    border-radius: 10px;
+    padding: 2px 30px;
+}
+
+.wrapper h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    padding: 5px 8px 1px 5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box .iconLogin {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: center;
+    font-size: 14.5px;
+    margin: 15px 0 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+}
+
+.remember-forgot .aLeter {
+    color: #6F6F6B;
+    text-decoration: none;
+    margin: 20px 0 15px;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.inputAdorment {
+    background: #fff;
+}
+
+.botonesJuntos {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+    /* Espacio entre los botones */
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: ESTILO DE LETRAS VALIDACIONES :::::::::::::::::::: */
+.label_Quest_Validaciones {
+    float: right;
+    color: red;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Contenedor_botoLogin {
+    display: flex;
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: ESTILO CONTENEDORES DIV - TABLACONTAINER :::::::::::::::::::: */
+
+.div_contenedorNav {
+    display: flex;
+    flex-grow: 1;
+    padding: 25px;
+    transition: margin 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
+    background-color: white;
+}
+
+.div_contenedorNav.abierto {
+    margin-left: 250px;
+    /* Cuando el menú esté abierto */
+}
+
+.div_contenedorNav.cerrado {
+    margin-left: 0;
+    /* Cuando el menú esté cerrado */
+}
+
+.table_Container {
+    border: 1px solid #d1d1cf !important;
+    border-radius: 20px !important;
+    overflow: auto;
+    /* Permite el scroll dentro del contenedor*/
+    padding: 2px;
+    padding-bottom: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: calc(100vh - 138px);
+    /* Altura dinámica con espacio (ajustando según el padding)*/
+    margin: 10px;
+    margin-bottom: 0;
+    /* Espacio alrededor del contenedor*/
+}
+
+.h1-derecha-abajo-ambiente {
+    position: absolute;
+    bottom: 5px;
+    /* Distancia desde el fondo */
+    right: 35px;
+    /* Distancia desde el lado derecho */
+    margin: 0;
+    /* Elimina el margen por defecto */
+    font-size: 1rem;
+    /* Ajusta el tamaño del texto si es necesario */
+    text-decoration: underline;
+    /* Agrega el subrayado */
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: ESTILO DE MOESTRAR RUTAS DIV - A - SPAN :::::::::::::::::::: */
+.Contenedor_Rutas {
+    /* font-weight: bold !important; */
+    color: #333 !important;
+    margin: -17px 0 !important;
+    display: block !important;
+    line-height: 1 !important;
+    text-align: left !important;
+    position: fixed !important;
+    height: calc(100vh - 97%) !important;
+    left: 32px !important;
+    padding: 5px !important;
+    transition: left 0.3s ease;
+    /* Animación suave */
+}
+
+.Contenedor_Rutas.menu-abierto {
+    left: 282px !important;
+    /* Ajusta este valor al ancho del menú */
+}
+
+.boton_rutas {
+    background: transparent !important;
+    border: none;
+    color: #0066CC;
+    text-decoration: 'underline';
+    /* cursor: pointer; */
+    padding: 0;
+    margin-right: 4px;
+    /* Añadimos un pequeño margen entre el texto y el '>'*/
+}
+
+.span_rutas {
+    display: inline-flex;
+    align-items: center;
+    color: #0066CC;
+}
+
+.span_rutas span {
+    margin: 0 4px;
+    color: #0066CC;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: ESTILO DE MOESTRAR MENUS ICON ICONBUTTON BOX :::::::::::::::::::: */
+.menuIconButtonStyle {
+    position: fixed !important;
+    top: 64px !important;
+    /* Ajusta la posición vertical según tu diseño */
+    left: -10px !important;
+    /* Parte del botón quedará fuera de la pantalla */
+    z-index: 1301 !important;
+    background-color: white !important;
+    /* Color de fondo para resaltar */
+    border-radius: 0 5px 5px 0 !important;
+    /* Bordes redondeados solo del lado derecho */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2) !important;
+    /* Sombra para darle profundidad */
+    padding: 5px !important;
+    /* Espaciado interno */
+    transition: left 0.3s ease !important;
+    /* Transición suave al mover el botón */
+}
+
+.menuIconButtonStyle:hover {
+    left: 0px !important;
+    /* Al pasar el mouse, el botón se muestra completo */
+    background-color: #f0f0f0 !important;
+    /* Cambia el color de fondo al hacer hover */
+}
+
+.menuIconStyle {
+    font-size: 23px !important;
+    /* Tamaño del ícono */
+    color: #6F6F6B !important;
+    /* Color del ícono */
+}
+
+.menuDrawerStyle .MuiDrawer-paper {
+    height: calc(100% - 68px) !important;
+    /* Altura restando el banner */
+    top: 68px !important;
+    /* Posición para dejar espacio para el banner */
+    background-color: white !important;
+    /* Cambia el color de fondo */
+    color: #0066CC !important;
+    /* Cambia el color del texto */
+    width: 250px !important;
+    /* Ancho del Drawer */
+}
+
+.menuDrawerStyle .MuiDrawer-paper * {
+    font-weight: 500 !important;
+    /* Aplica la negrita a todos los elementos dentro del Drawer */
+}
+
+
+.activeMenu {
+    background-color: red !important;
+    /* Marca el fondo en rojo */
+    color: white !important;
+    /* Cambia el color del texto a blanco (opcional) */
+}
+
+.activeMenu:hover {
+    background-color: darkred !important;
+    /* Color más oscuro cuando pasa el ratón */
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //:::::::: ICON BUTTON GENERALES :::::::::::::::::::: */
+
+.icon-button-general {
+    display: flex !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #e0e0e0 !important;
+    border-radius: 50% !important;
+    /* Esto asegura que el fondo sea redondo */
+    width: 35px !important;
+    /* Ajusta el tamaño según lo necesario */
+    height: 35px !important;
+    /* Ajusta el tamaño según lo necesario */
+    pointer-events: auto !important;
+    /* Asegura que el tooltip reciba eventos */
+}
+
+.icon-button-general:hover {
+    background-color: #e0e0e0 !important;
+}
+
+.icon-style-add {
+    font-size: 30px !important;
+    /* Ajusta el tamaño según lo necesario */
+    color: #2AD5AA !important;
+}
+
+.icon-style-home {
+    font-size: 30px !important;
+    /* Ajusta el tamaño según lo necesario */
+    color: #2AD5AA !important;
+}
+
+.icon-style-search {
+    font-size: 30px !important;
+    /* Ajusta el tamaño según lo necesario */
+    color: #0066CC !important;
+}
+
+.icon-style-question {
+    font-size: 30px !important;
+    /* Ajusta el tamaño según lo necesario */
+    color: #2AD5AA !important;
+}
+
+.icon-style-people {
+    font-size: 30px !important;
+    /* Ajusta el tamaño según lo necesario */
+    color: #2AD5AA !important;
+}
+
+.custom-icon {
+    color: black;
+    /* Asegura que tome el color del texto o contenedor */
+    pointer-events: none;
+    /* Evita que sea interactivo como un botón */
+}
+
+.rct-collapse {
+    background: none;
+    /* Elimina el fondo azul del botón */
+    border: none;
+    /* Elimina bordes */
+    box-shadow: none;
+    /* Elimina sombras */
+    padding: 0;
+    /* Elimina espacio extra */
+    margin: 0;
+    /* Elimina márgenes */
+}
+
+.rct-collapse:hover {
+    background: none;
+    /* Elimina el fondo azul al hacer hover */
+    border: none;
+    /* Asegura que no aparezca borde */
+}
+
+.rct-node-leaf .rct-collapse {
+    display: none;
+    /* Oculta el contenedor de íconos para nodos hoja */
+}
+
+.box-selected {
+    width: 45%;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.box-selected-ListItem {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.box-selected-Typography {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 5px 0;
+}
+
+.mi-boton-personalizado {
+    color: black;
+    /* Texto negro por defecto */
+    transition: color 0.3s ease;
+    /* Suaviza el cambio de color */
+}
+
+.mi-boton-personalizado:hover {
+    color: white;
+    /* Texto blanco cuando se hace hover */
+    background-color: #0066CC;
+}
+
+.mi-boton-personalizadoBack {
+    color: white !important;
+    /* Texto negro por defecto */
+    background-color: #0066CC !important;
+    transition: color 0.3s ease !important;
+    /* Suaviza el cambio de color */
+}
+
+.mi-boton-personalizadoBack:hover {
+    color: white !important;
+    /* Texto blanco cuando se hace hover */
+    background-color: #2AD5AA !important;
+}
+
+.box-selected-ListButton {
+    min-height: 10px !important;
+    padding: 0px 8px !important;
+    background-color: white !important;
+    font-weight: bold !important;
+    transition: background-color 0.3s ease !important;
+    margin: 0 !important;
+}
+
+.box-selected-ListButton:hover {
+    background-color: #367AF6 !important;
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2) !important;
+    /* Color en hover */
+}
+
+.box-selected-ListItem {
+    min-height: 10px !important;
+    padding: 0px 0px !important;
+    margin: 0 !important;
+}
+
+.AscDescDiv {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+}
+
+.MoverTodosAsignados {
+    background-color: white !important;
+    color: #2AD5AA !important;
+    border: 1px solid #2AD5AA !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.MoverTodosAsignados:hover {
+    background-color: #E6FBF5 !important;
+}
+
+.MoverTodosNoAsignados {
+    background-color: white !important;
+    color: red !important;
+    border: 1px solid red !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.MoverTodosNoAsignados:hover {
+    background-color: #ffebee !important;
 }

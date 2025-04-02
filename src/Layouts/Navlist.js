@@ -5,56 +5,69 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { AppBar, Toolbar } from '@mui/material';
+import { AppBar, Toolbar , IconButton} from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import Header from './HeaderLayouts';
 import {CssBaseline } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useState } from 'react';
 
 const drawerWidth = 240;
 
 const NAVIGATION = [
-    { title: 'Roles', icon: <DashboardIcon /> },
-    { title: 'Orders', icon: <ShoppingCartIcon /> },
-    { title: 'Reports', icon: <BarChartIcon /> },
-    { title: 'Integrations', icon: <LayersIcon /> }
+    { title: 'Roles', icon: <DashboardIcon />, path: '/roles' },
+    { title: 'Usuarios', icon: <ShoppingCartIcon />, path: '/dashboard' },
+    { title: 'Categorias', icon: <BarChartIcon />, path: '/categorias' },
+    { title: 'Integrations', icon: <LayersIcon />, path: '/integrations' }
 ];
 
 export default function Navlist({ children }) {
-    const [open, setOpen] = React.useState(false);
-
+    const navigate = useNavigate();
+    const [open, setOpen] = useState(false);
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            {/* Barra superior */}
-            <AppBar position="fixed" sx={{ zIndex: 1201 }}>
+        <CssBaseline />
+        
+        {/* Barra superior con botón de menú */}
+        <AppBar position="fixed" sx={{ zIndex: 1201 }}>
+            <Toolbar>
+                <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setOpen(true)}>
+                    <MenuIcon />
+                </IconButton>
                 <Header />
-            </AppBar>
+            </Toolbar>
+        </AppBar>
 
-            {/* Menú lateral */}
-            <Drawer
-                variant="permanent"
-                sx={{ width: drawerWidth, flexShrink: 0, [`& .MuiDrawer-paper`]: 
-                    { width: drawerWidth, boxSizing: 'border-box' } }}
-            >
-                <Toolbar />
-                <List>
-                    {NAVIGATION.map((item, index) => (
-                        <ListItem button key={index}>
-                            <ListItemIcon>{item.icon}</ListItemIcon>
-                            <ListItemText primary={item.title} />
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
+        {/* Drawer temporal */}
+        <Drawer
+            variant="temporary"
+            open={open}
+            onClose={() => setOpen(false)}
+            sx={{ [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' } }}
+        >
+            <Toolbar />
+            <List>
+                {NAVIGATION.map((item, index) => (
+                    <ListItem button key={index} onClick={() => { 
+                        navigate(item.path);
+                        setOpen(false); // Cierra el menú después de navegar
+                    }}>
+                        <ListItemIcon>{item.icon}</ListItemIcon>
+                        <ListItemText primary={item.title} />
+                    </ListItem>
+                ))}
+            </List>
+        </Drawer>
 
-            {/* Contenido */}
-            <Box component="main" sx={{ flexGrow: 1, p: 3, ml: `${drawerWidth}px`, mt: '64px' }}>
-                {children}
-            </Box>
+        {/* Contenido principal */}
+        <Box component="main" sx={{ flexGrow: 1, p: 3, mt: '64px' }}>
+            {children}
         </Box>
-    );
+    </Box>
+);
 }

@@ -4,11 +4,10 @@ import Footer from '../../Layouts/Footer';
 import '../../Styles/EstilosGenerales.css';
 import { Grid2, Paper } from "@mui/material";
 import CatalogManager from '../../components/pages/CatalogManager';
-import { USUARIO } from '../../components/utils/formUtils';
+import { CATEGORIAS } from '../../components/utils/formUtils';
 
 
-
-const Dashboard = () => {
+const Categorias = () => {
     return (
         <div className="containerGeneral">
             <div className="content">
@@ -20,7 +19,6 @@ const Dashboard = () => {
                     marginLeft: "20%",
                     paddingTop: '-10%'
                 }}>
-
                 </div>
                 <Grid2 container component="main" sx={{ height: '94vh' }}
                     style={{
@@ -44,9 +42,9 @@ const Dashboard = () => {
                             paddingTop: '-5%',
                             marginTop: '2%',
                         }}  >
-                        
-                            <CatalogManager catalogName="Usuarios" fields={USUARIO} />
-                        
+
+                        <CatalogManager catalogName="Categorias" fields={CATEGORIAS} />
+
                     </Grid2>
                 </Grid2>
             </div>
@@ -55,5 +53,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
-
+export default Categorias;
